@@ -6,6 +6,9 @@ var handlebars = require('express3-handlebars');
 var app = express();
 //route for hashtag
 var hashtag = require('./routes/hashtag');
+//database setup
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://localhost/instagramexample');
 
 //Configures the Template engine
 app.engine('handlebars', handlebars());
