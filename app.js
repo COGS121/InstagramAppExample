@@ -6,6 +6,7 @@ var handlebars = require('express3-handlebars');
 var app = express();
 //route for hashtag
 var hashtag = require('./routes/hashtag');
+var index = require('./routes/index');
 //database setup
 var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGOHQ_URL || 'mongodb://localhost/instagramexample');
@@ -18,9 +19,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser());
 
 //routes
-app.get('/', function (req, res) {
-	res.render('index');
-});
+app.get('/', index.view);
 app.get('/hashtag', function (req, res) {
 	res.render('hashtag');
 })
