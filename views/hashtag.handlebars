@@ -18,7 +18,23 @@
 </head>
 
 <body>
-    <div class="container">
+      {{#if hashtagValue}}
+      <div class="container">
+        
+        <h3>You are currently checking out #{{hashtagValue}}</h3>
+        <div class="row">
+            {{#each imageArray}}
+              <div class="col-xs-4">
+                <img src="{{url}}" class="img-responsive">
+                <br>
+              </div>
+
+            {{/each}}
+          </div>
+      </div>
+      <br>
+      {{/if}}
+      <div class="container">
         <h1>What hashtag would you like to see?</h1>
 
         <form id="viewHashTag" role="form" method="post" action="/hashtag">
