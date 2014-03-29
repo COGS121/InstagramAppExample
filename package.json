@@ -13,8 +13,8 @@
     "passport": "*",
     "passport-facebook": "*",
     "passport-twitter": "*",
-    "dotenv": "*"
-
+    "dotenv": "*",
+    "instagram-node-lib": "*"
   },
   "engines": {
     "node": "0.10.x"
