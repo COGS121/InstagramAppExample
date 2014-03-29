@@ -8,3 +8,7 @@ exports.view = function(req, res) {
 	});
 }
 
+exports.deleteImage = function(req, res) {
+	models.Img.find({ _id: req.body.id }).remove().exec();
+	res.redirect('/');
+}

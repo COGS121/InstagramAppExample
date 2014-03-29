@@ -25,7 +25,7 @@ app.get('/hashtag', function (req, res) {
 })
 app.post('/hashtag', hashtag.getHashtag);
 app.post('/save', hashtag.saveFavorites);
-
+app.post('/delete', index.deleteImage);
 //set environment ports and start application
 app.set('port', process.env.PORT || 3000);
 http.createServer(app).listen(app.get('port'), function(){

@@ -25,6 +25,10 @@
               <div class="col-xs-4" class="images" style="text-align:center">
                 <img src="{{image}}" class="img-responsive" class="img hashtag-img"><br>
                 <h4>#{{hashtag}}</h4>
+                <form id="deleteHashTag" role="form" method="post" action="/delete">
+                  <input type="hidden" name="id" value="{{_id}}">
+                  <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
               </div>
             {{/each}}
           </div>
