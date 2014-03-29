@@ -20,15 +20,18 @@
 <body>
       {{#if hashtagValue}}
       <div class="container">
-        
         <h3>You are currently checking out #{{hashtagValue}}</h3>
         <div class="row">
             {{#each imageArray}}
-              <div class="col-xs-4">
-                <img src="{{url}}" class="img-responsive">
-                <br>
+              <div class="col-xs-4" class="images" style="text-align:center">
+                <img src="{{url}}" class="img-responsive" class="img hashtag-img"><br>
+                <form id="saveHashTag" role="form" method="post" action="/save">
+                  <input type="hidden" name="hashtag" value="{{../hashtagValue}}">
+                  <input type="hidden" name="url" value="{{url}}">
+                  <button type="submit" class="btn btn-info">Save</button>
+                </form>
+                <br><br>
               </div>
-
             {{/each}}
           </div>
       </div>
@@ -45,6 +48,7 @@
             <input type="submit" id="submitBtn" class="btn btn-default" value="View Hashtag"></input>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
